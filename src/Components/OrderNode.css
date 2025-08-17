@@ -1,0 +1,129 @@
+.node-container {
+    width: 100%;
+    height: 230px;
+    background: #f0f0ff;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(122, 117, 224);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 0px 0px rgb(86, 80, 255);
+}
+
+.order-mode-control-container {
+    width: 90%;
+    height: 18%;
+    background-color: rgb(210, 214, 252);
+    border-radius: 8px;
+    margin: 10px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.order-mode-control-button {
+    width: 43%;
+    height: 80%;
+    border-radius: 5px;
+    border: none;
+    outline: transparent;
+    background-color: rgb(111, 126, 255);
+    transition: background-color 0.2s ease;
+}
+
+.order-mode-control-button:hover {
+    cursor: pointer;
+}
+
+.order-mode-input-container {
+    width: 90%;
+    height: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto 0 auto;
+}
+
+.order-mode-input-container:nth-of-type(2) {
+    margin-top: 15px;
+}
+
+.order-mode-input-title {
+    font-size: 1rem;
+}
+
+.order-mode-input {
+    flex: 1;
+    outline: transparent;
+    border-style: none none solid none;
+    border-width: 1.5px;
+    border-color: black;
+    background-color: transparent;
+    margin-left: 5px;
+    min-width: 0;
+}
+
+.order-mode-quantities-input-container {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.order-mode-individual-quantity-input-container {
+    width: 40%;
+    height: 100%;
+}
+
+.order-mode-individual-quantity-subtitle {
+    font-size: 0.7rem;
+}
+
+.order-mode-individual-quantity-input {
+    width: 100%;
+    height: 60%;
+    outline: transparent;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    background-color: transparent;
+    min-width: 0;
+    text-align: center;
+}
+
+.order-mode-quantities-middle-icon {
+    width: 12%;
+    margin-top: 10px;
+    aspect-ratio: 1/1;
+    background-image: url("../Icons/relation-one-or-many-to-only-one.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.order-error-text {
+    margin: 5px 0 0 5%;
+}
+
+.order-confirm-button {
+    width: auto;
+    margin: 20px 0 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px 6px 12px;
+    border-radius: 25px;
+    background-color: rgb(111, 126, 255);
+    border: none;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.order-confirm-button:hover {
+    cursor: pointer;
+    padding: 6px 15px 6px 15px;
+    background-color: rgb(82, 99, 255);
+}

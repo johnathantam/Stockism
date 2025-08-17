@@ -1,0 +1,200 @@
+.marketnode-container {
+    width: 100%;
+    height: 380px;
+    border-style: solid;
+    border-width: 3px;
+    background: #f0f0ff;
+    border-color: rgb(122, 117, 224);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 0px 0px rgb(86, 80, 255); 
+    display: flex;
+}
+
+.marketnode-view-container {
+    width: 50%;
+    height: 100%;
+}
+
+.marketnode-stock-search-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 8%;
+    box-sizing: border-box;
+}
+
+.market-stock-search-title {
+    font-size: 1.4rem;
+}
+
+.market-stock-search-input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    outline: transparent;
+    border-style: none none solid none;
+    border-width: 1.5px;
+    border-color: black;
+    background-color: transparent;
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding: 5px 0 5px 0;
+}
+
+.market-stock-list-container {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    height: 68%;
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: black;
+    overflow-y: scroll;
+}
+
+.market-stock-list-container::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 25px;
+}
+
+.market-stock-list-container::-webkit-scrollbar-track {
+  background: transparent;  /* Track background transparent */
+}
+
+.market-stock-list-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent thumb */
+  border-radius: 4px;
+}
+
+/* Optional: on hover, slightly darker */
+.market-stock-list-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.market-stock-container {
+    width: 100%;
+    height: 65px;
+    border-style: none none none solid;
+    border-width: 2px;
+    padding: 2px 8px 0px 10px;
+    box-sizing: border-box;
+    background-color: rgb(221, 220, 255);
+}
+
+.market-stock-container:not(:first-child) {
+    margin-top: 10px;
+}
+
+.market-stock-container:hover {
+    cursor: pointer;
+    padding: 5px 5px 0 15px;
+    background-color: rgb(129, 113, 255);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 🔥 depth */
+    transform: translateY(-2px); /* slight lift */
+}
+
+.market-stock-container-selected {
+    cursor: pointer;
+    padding: 5px 5px 0 15px;
+    background-color: rgb(129, 113, 255);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-left-color: rgb(44, 58, 255) !important;
+}
+
+.market-stock-stat-row {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.market-stock-stat-name {
+    font-size: 1rem;
+}
+
+.market-stock-stat-price {
+    font-size: 1rem;
+}
+
+.market-stock-stat-field {
+    font-size: 0.8rem;
+    width: 65%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.market-stock-stat-trend {
+    font-size: 1rem;
+}
+
+.market-stock-graph-preview-container {
+    width: 80%;
+    height: 40%;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-top: 8%;
+    background-color: rgb(62, 56, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.market-stock-depth-stats-container {
+    width: 80%;
+    height: 40%;
+    margin-left: 10%;
+    margin-top: 5%;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: black;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.market-stock-depth-stats-container::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 25px;
+}
+
+.market-stock-depth-stats-container::-webkit-scrollbar-track {
+  background: transparent;  /* Track background transparent */
+}
+
+.market-stock-depth-stats-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent thumb */
+  border-radius: 4px;
+}
+
+/* Optional: on hover, slightly darker */
+.market-stock-depth-stats-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.market-stock-depth-stat-row-container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+    border-style: solid none none none;
+    border-width: 1px;
+    border-color: rgb(140, 140, 140);
+    box-sizing: border-box;
+}
+
+.market-stock-depth-stat-title {
+    font-size: 1.2rem;
+}
+
+.market-stock-depth-stat-subtitle {
+    font-size: 1rem;
+}

@@ -1,0 +1,301 @@
+.derivatives-node-container {
+    width: 100%;
+    height: 320px;
+    background: #f0f0ff;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(122, 117, 224);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 0px 0px rgb(86, 80, 255); 
+}
+
+.derivatives-header-container {
+    width: 100%;
+    height: 60px;
+    padding: 4% 5% 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.derivatives-node-title {
+    font-size: 2rem;
+}
+
+.derivatives-mode-control-container {
+    width: 53%;
+    height: 100%;
+    background-color: rgb(210, 214, 252);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.derivatives-mode-control-button {
+    width: 43%;
+    height: 80%;
+    border-radius: 5px;
+    border: none;
+    outline: transparent;
+    font-size: 0.7rem;
+    background-color: rgb(111, 126, 255);
+}
+
+.derivatives-mode-control-button:hover {
+    cursor: pointer;
+}
+
+.derivatives-order-container {
+    width: 90%;
+    margin: 5% 5% 0 5%;
+    box-sizing: border-box;
+    height: 200px;
+    display: flex;
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: black;
+    background-color: transparent;
+    gap: 20px;
+}
+
+.derivatives-left-half-container {
+    width: 50%;
+    min-height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.derivatives-left-half-container::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 25px;
+}
+
+.derivatives-left-half-container::-webkit-scrollbar-track {
+  background: transparent;  /* Track background transparent */
+}
+
+.derivatives-left-half-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent thumb */
+  border-radius: 4px;
+}
+
+/* Optional: on hover, slightly darker */
+.derivatives-left-half-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.derivatives-mode-title {
+    font-size: 1.3rem;
+}
+
+.derivatives-mode-input-container {
+    width: 90%;
+    height: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.derivatives-mode-input-title {
+    font-size: 1rem;
+}
+
+.derivatives-mode-input {
+    flex: 1;
+    outline: transparent;
+    border-style: none none solid none;
+    border-width: 1.5px;
+    border-color: black;
+    background-color: transparent;
+    margin-left: 5px;
+    min-width: 0;
+}
+
+.derivatives-order-mode-quantities-input-container {
+    width: 98%;
+    margin-top: 5%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.derivatives-order-mode-individual-quantity-input-container {
+    width: 40%;
+    height: 100%;
+}
+
+.derivatives-order-mode-individual-quantity-subtitle {
+    font-size: 0.7rem;
+}
+
+.derivatives-order-mode-individual-quantity-input {
+    width: 100%;
+    height: 60%;
+    outline: transparent;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    box-sizing: border-box;
+    background-color: transparent;
+    min-width: 0;
+    text-align: center;
+}
+
+.derivatives-order-mode-quantities-middle-icon {
+    width: 12%;
+    margin-top: 10px;
+    aspect-ratio: 1/1;
+    background-image: url("../Icons/relation-one-or-many-to-only-one.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.derivatives-error-text {
+    margin: 5px 0 0 5%;
+}
+
+.derivatives-confirm-button {
+    margin: 20px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px 5px 12px;
+    border-radius: 25px;
+    background-color: rgb(111, 126, 255);
+    border: none;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.derivatives-confirm-button:hover {
+    cursor: pointer;
+    padding: 5px 15px 5px 15px;
+    background-color: rgb(82, 99, 255);
+}
+
+.derivatives-cancel-button {
+    margin: 8px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px 5px 12px;
+    border-radius: 25px;
+    border: none;
+}
+
+.derivatives-cancel-button:hover {
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+.derivatives-right-half-container {
+    width: 50%;
+    height: 100%;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.derivatives-right-half-container::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 25px;
+}
+
+.derivatives-right-half-container::-webkit-scrollbar-track {
+  background: transparent;  /* Track background transparent */
+}
+
+.derivatives-right-half-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent thumb */
+  border-radius: 4px;
+}
+
+/* Optional: on hover, slightly darker */
+.derivatives-right-half-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.derivatives-explanation-title {
+    font-size: 1rem;
+}
+
+.derivatives-explanation {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    width: 98%;
+}
+
+.derivative-active-orders-title {
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+.derivative-order-container {
+    width: 100%;
+    min-height: 70px;
+    border-style: none none none solid;
+    border-width: 2px;
+    padding: 2px 0px 0px 8px;
+    box-sizing: border-box;
+    background-color: rgb(221, 220, 255);
+}
+
+.derivative-order-container:not(:first-child) {
+    margin-top: 10px;
+}
+
+.derivative-order-container:hover {
+    cursor: pointer;
+    padding: 6px 0px 0 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 🔥 depth */
+    transform: translateY(-2px); /* slight lift */
+    background-color: rgb(129, 113, 255);
+}
+
+.derivative-order-container-selected {
+    cursor: pointer;
+    padding: 5px 5px 0 15px;
+    background-color: rgba(250, 235, 215, 0.235);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-left-color: rgb(44, 58, 255) !important;
+}
+
+.derivative-order-stat-row {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.derivative-order-stat-type{
+    font-size: 0.9rem;
+    max-width: 95%;
+}
+
+.derivative-order-stat-price {
+    font-size: 1rem;
+}
+
+.derivative-order-stat-explanation {
+    font-size: 0.8rem;
+    max-width: 95%;
+    margin-top: 2%;
+}
+
+.derivative-order-state-trend {
+    font-size: 1rem;
+}
+

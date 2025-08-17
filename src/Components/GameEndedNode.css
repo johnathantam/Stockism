@@ -1,0 +1,64 @@
+.game-end-background {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.915);
+    z-index: 999;
+}
+
+.game-end-container {
+    width: 35%;
+    height: 40%;
+    background-color: rgb(238, 237, 255); 
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(64, 64, 64);
+    box-shadow: rgba(72, 55, 255, 0.4) 5px 5px, rgba(39, 74, 202, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.game-end-title {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-left: 6%;
+    margin-top: 6%;
+    width: 80%;
+    animation: dropDown 0.4s ease-out forwards;
+}
+
+.game-end-description {
+    font-size: 1rem;
+    margin-left: 6%;
+    margin-top: 4%;
+    width: 80%;
+    animation: dropDown 0.4s ease-out forwards;
+}
+
+.game-end-exit-button {
+    width: 30%;
+    margin: 10% 0 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px 6px 8px;
+    border-radius: 25px;
+    background-color: rgb(111, 126, 255);
+    font-size: 1rem;
+    border: none;
+    box-shadow: 5px 5px 0px 0px rgb(73, 73, 255);
+    transition: transform 0.1s ease;
+}
+
+.game-end-exit-button:hover {
+    cursor: pointer;
+    background-color: rgb(82, 99, 255);
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px 0px rgba(244, 84, 255, 0.542);
+}
