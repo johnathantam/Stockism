@@ -14,7 +14,7 @@ const EventsNode = forwardRef<EventNodeHandles>((_props, ref) => {
     }))
 
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+        bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: "nearest", inline: "nearest" });
     }, [events]);
 
     const ActionEvent = ({ action }: { action: EventInterface }) => {

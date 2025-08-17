@@ -127,3 +127,9 @@
     padding: 6px 15px 6px 15px;
     background-color: rgb(82, 99, 255);
 }
+
+@media (orientation: portrait) { 
+    .node-container {
+        height: 265px;
+    }
+}

@@ -78,3 +78,7 @@
     padding: 5px 25px 5px 25px;
     background-color: rgb(82, 99, 255);
 }
+
+/* @media (orientation: portrait) { 
+    .time-node
+} */

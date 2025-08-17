@@ -71,7 +71,11 @@ const TimeNode = ({ onMinutePassed, onHourPassed, onDayPassed, onTimeSkip, onTim
         try {
             const daysSkipped: number = parseInt(timeSkipAmount);
             onTimeSkip.forEach(cb => cb(daysSkipped))
-            setTime(prevTime => { return { ...prevTime, day: prevTime.day + daysSkipped } })
+            setTime(prevTime => { return { ...prevTime, day: prevTime.day + daysSkipped } });
+
+            if (time.day >= timeLimit || time.day + daysSkipped >= timeLimit)
+                queueMicrotask(() => onTimeLimitExceeded());
+
         } catch (error) {
             if (error instanceof Error) {
                 sendErrorMessage(error.message);

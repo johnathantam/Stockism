@@ -62,3 +62,16 @@
     transform: translate(3px, 3px);
     box-shadow: 2px 2px 0px 0px rgba(244, 84, 255, 0.542);
 }
+
+@media (orientation: portrait) { 
+    .game-end-background {
+        position: fixed;
+    }
+
+    .game-end-container {
+        position: sticky;
+        top: 25%;
+        width: 70%;
+
+    }
+}

@@ -46,5 +46,19 @@
     .main-app-container {
         flex-direction: column;
         height: auto;
+        padding-top: 15px;
+        gap: 12px; 
+    }
+
+    .main-app-left-sidebar {
+        width: 100%;
+    }
+
+    .main-app-middle-container {
+        width: 100%;
+    }
+
+    .main-app-right-sidebar {
+        width: 100%;
     }
 }
