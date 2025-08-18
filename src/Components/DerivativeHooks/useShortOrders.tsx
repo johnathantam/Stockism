@@ -79,7 +79,7 @@ function useShortOrders( marketRef: RefObject<MarketNodeHandles>, portfolioRef: 
                         debtDuration: order.debtDuration - 1
                     }))
                     .filter(order => {
-                        if (order.shortAmount > 0 && order.debtDuration <= 0) {
+                        if (order.shortQuantity > 0 && order.debtDuration <= 0) {
                             const marketItem: MarketStockInterface | undefined = marketRef.current.getMarketItem(order.stockName);
                             if (marketItem == undefined)
                                 return false;
