@@ -82,7 +82,7 @@ function useShortOrders( marketRef: RefObject<MarketNodeHandles>, portfolioRef: 
                         if (order.shortAmount > 0 && order.debtDuration <= 0) {
                             const marketItem: MarketStockInterface | undefined = marketRef.current.getMarketItem(order.stockName);
                             if (marketItem == undefined)
-                                return;
+                                return false;
                             portfolioRef.current.purchaseMiscellanious(order.shortQuantity * marketItem.price);
 
                             eventChat.current.announceEvent({
@@ -92,6 +92,8 @@ function useShortOrders( marketRef: RefObject<MarketNodeHandles>, portfolioRef: 
                                 eventDescriptionColor: "rgba(255, 70, 70, 1)",
                                 eventBorderColor: "rgba(255, 70, 70, 1)"
                             });
+
+                            return false;
                         }
                         return true;
                     })

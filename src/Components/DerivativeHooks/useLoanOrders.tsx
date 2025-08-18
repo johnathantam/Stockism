@@ -82,7 +82,7 @@ function useLoanOrders(portfolioRef: RefObject<PortfolioStockHandles>, eventChat
                                     eventBorderColor: "rgba(255, 70, 70, 1)"
                                 });
                             }
-                            return false; // remove this short order
+                            return false; // remove this loan order
                         }
                         return true;
                     })
