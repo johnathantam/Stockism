@@ -19,6 +19,7 @@ const GameEndedNode = forwardRef<GameEndedHandles, GameEndedNodeProps>(({ portfo
     const calculateFinalProfit = () => {
         const liquidBalance = portfolioRef.current?.getLiquidBalance() ?? 0;
         const portfolioBalance = portfolioRef.current?.getPortfolioBalance() ?? 0;
+        console.log(liquidBalance, portfolioBalance)
         return liquidBalance + portfolioBalance - 100000; // assuming 100k start
     };
 

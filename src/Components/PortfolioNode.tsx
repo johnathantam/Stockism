@@ -1,4 +1,4 @@
-import { useState, useImperativeHandle, type RefObject, forwardRef } from "react";
+import { useState, useImperativeHandle, type RefObject, forwardRef, useRef, useEffect } from "react";
 import type { PortfolioAssetInterface } from "../Interfaces/PortfolioStockInterface";
 import type { PortfolioStockHandles } from "../Interfaces/PortfolioStockInterface";
 import type { MarketIndexFundInterface, MarketNodeHandles, MarketStockInterface } from "../Interfaces/MarketStockInterface";
@@ -10,6 +10,10 @@ interface PortfolioNodeProps {
 }
 
 const PortfolioNode = forwardRef<PortfolioStockHandles, PortfolioNodeProps>(({ marketRef }, ref) => {
+    const portfolioStocksRef = useRef<PortfolioAssetInterface[]>([]);
+    const portfolioIndexFundsRef = useRef<PortfolioAssetInterface[]>([]);
+    const liquidBalanceRef = useRef<number>(100000);
+
     const [portfolioStocks, setPortfolioStocks] = useState<PortfolioAssetInterface[]>([]);
     const [portfolioIndexFunds, setPortfolioIndexFunds] = useState<PortfolioAssetInterface[]>([]);
 
@@ -19,24 +23,24 @@ const PortfolioNode = forwardRef<PortfolioStockHandles, PortfolioNodeProps>(({ m
 
     useImperativeHandle(ref, () => ({
         getPortfolioAssets() {
-            return portfolioStocks;
+            return portfolioStocksRef.current.concat(portfolioIndexFundsRef.current);
+        },
+        getPortfolioAsset(name: string) {
+            return portfolioStocksRef.current.concat(portfolioIndexFundsRef.current).find(asset => asset.name === name);
         },
         getLiquidBalance() {
-            return liquidBalance;
+            return liquidBalanceRef.current;
         },
         getPortfolioBalance() {
-            const balance: number = portfolioStocks.reduce((acc, stock) => {
-                const portfolioStock: MarketStockInterface | undefined = marketRef.current.getMarketStock(stock.name);
-                return (portfolioStock) ? acc + stock.quantityOwned * portfolioStock.price : 0;
+            const balance: number = portfolioStocksRef.current.concat(portfolioIndexFundsRef.current).reduce((acc, asset) => {
+                const portfolioStock: MarketStockInterface | undefined = marketRef.current.getMarketItem(asset.name);
+                return (portfolioStock) ? acc + asset.quantityOwned * portfolioStock.price : acc;
             }, 0);
 
             return balance;
         },
-        getPortfolioAsset(name: string) {
-            return portfolioStocks.find(stock => stock.name === name);
-        },
         purchaseStock(name: string, sharesPurchased: number, totalPrice: number) {
-            const updatedStocks: PortfolioAssetInterface[] = [...portfolioStocks];
+            const updatedStocks: PortfolioAssetInterface[] = [...portfolioStocksRef.current];
             const purchasedStockIndex: number | undefined = updatedStocks.findIndex(stock => stock.name === name);
             if (purchasedStockIndex != undefined) {
 
@@ -54,7 +58,7 @@ const PortfolioNode = forwardRef<PortfolioStockHandles, PortfolioNodeProps>(({ m
             }
         },
         sellStock(name, sharesSold, totalPrice) {
-            const updatedStocks: PortfolioAssetInterface[] = [...portfolioStocks];
+            const updatedStocks: PortfolioAssetInterface[] = [...portfolioStocksRef.current];
             const soldStockIndex: number | undefined = updatedStocks.findIndex(stock => stock.name === name);
             if (soldStockIndex != undefined) {
                 updatedStocks[soldStockIndex].quantityOwned -= sharesSold;
@@ -68,7 +72,7 @@ const PortfolioNode = forwardRef<PortfolioStockHandles, PortfolioNodeProps>(({ m
             }
         },
         purchaseIndexFund(name, sharesPurchased, totalPrice) {
-            const updatedPortfolioIndexFunds: PortfolioAssetInterface[] = [...portfolioIndexFunds];
+            const updatedPortfolioIndexFunds: PortfolioAssetInterface[] = [...portfolioIndexFundsRef.current];
             const purchasedFundIndex: number= updatedPortfolioIndexFunds.findIndex(fund => fund.name === name);
 
             // If stock isn't found -- then create a new profile for the stock
@@ -85,7 +89,7 @@ const PortfolioNode = forwardRef<PortfolioStockHandles, PortfolioNodeProps>(({ m
 
         },
         sellIndexFund(name, sharesSold, totalPrice) {
-            const updatedPortfolioIndexFunds: PortfolioAssetInterface[] = [...portfolioIndexFunds];
+            const updatedPortfolioIndexFunds: PortfolioAssetInterface[] = [...portfolioIndexFundsRef.current];
             const soldFundIndex: number | undefined = updatedPortfolioIndexFunds.findIndex(fund => fund.name === name);
             if (soldFundIndex != -1) {
                 updatedPortfolioIndexFunds[soldFundIndex].quantityOwned -= sharesSold;
@@ -108,6 +112,13 @@ const PortfolioNode = forwardRef<PortfolioStockHandles, PortfolioNodeProps>(({ m
             setCurrentPortfolioValue(calculatePortfolioValue());
         },
     }));
+
+    // Keep refs updated whenever state changes
+    useEffect(() => {
+        portfolioStocksRef.current = portfolioStocks;
+        portfolioIndexFundsRef.current = portfolioIndexFunds;
+        liquidBalanceRef.current = liquidBalance;
+    }, [portfolioStocks, portfolioIndexFunds, liquidBalance]);
 
     const calculatePortfolioValue = () => {
         let value = 0;

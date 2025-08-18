@@ -220,7 +220,7 @@ const MarketNode = forwardRef<MarketNodeHandles, MarketNodeProps>((props, ref) =
                         </div>
                         <div className="market-stock-depth-stat-row-container">
                             <p className="market-stock-depth-stat-title">Shares Avlb:</p>
-                            <p className="market-stock-depth-stat-subtitle">{stockPreview.sharesOutstanding}</p>
+                            <p className="market-stock-depth-stat-subtitle">{stockPreview.sharesOutstanding.toFixed(4)}</p>
                         </div>
                         <div className="market-stock-depth-stat-row-container">
                             <p className="market-stock-depth-stat-title">Field:</p>

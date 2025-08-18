@@ -299,3 +299,64 @@
     font-size: 1rem;
 }
 
+@media (orientation: portrait) { 
+    .derivatives-node-container {
+        height: 650px;
+    }
+
+    .derivatives-header-container {
+        flex-direction: column;
+        justify-content: flex-start; /* stack from the top */
+        align-items: flex-start;    /* align to the left */
+        gap: 5%;
+        box-sizing: border-box;
+        height: 100px;
+    } 
+
+    .derivatives-mode-control-container {
+        width: 100%;
+    }
+
+    .derivatives-order-container {
+        flex-direction: column-reverse;
+        height: 430px;
+        overflow-y: scroll;
+    }
+
+    .derivatives-order-container::-webkit-scrollbar {
+        width: 2px;
+        border-radius: 25px;
+    }
+    
+    .derivatives-order-container::-webkit-scrollbar-track {
+        background: transparent;
+        /* Track background transparent */
+    }
+    
+    .derivatives-order-container::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Semi-transparent thumb */
+        border-radius: 4px;
+    }
+    
+    /* Optional: on hover, slightly darker */
+    .derivatives-order-container::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .derivatives-right-half-container {
+        width: 100%;
+        overflow-y: visible;
+    }
+
+    .derivatives-left-half-container {
+        width: 100%;
+        overflow-y: visible;
+        margin-top: 3%;
+        padding-bottom: 30px;
+    }
+
+    .derivatives-mode-input-container {
+        height: 10%;
+    }
+}

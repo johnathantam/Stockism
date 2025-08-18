@@ -51,7 +51,7 @@ export class EventEngine {
         this.activeEvents.push(eventToSpawn);
         this.eventChat.announceEvent({ 
             eventTitle: "Market Event [" + eventToSpawn.eventType + "]", 
-            eventDescription: eventToSpawn.title + "—" + eventToSpawn.description, 
+            eventDescription: eventToSpawn.title + "—" + eventToSpawn.description + ` Analysts predicts effects to: ${eventToSpawn.affectedFields.join(", ")}.`, 
             eventTitleColor: shiftColor((eventToSpawn.sentimentDelta > 0) ? "#04d569ff" : "#e2522eff", 30), 
             eventDescriptionColor: shiftColor((eventToSpawn.sentimentDelta > 0) ? "#04d569ff" : "#e2522eff", 30),
             eventBorderColor: shiftColor((eventToSpawn.sentimentDelta > 0) ? "#04d569ff" : "#e2522eff", 30)

@@ -28,12 +28,35 @@
     font-size: 1rem;
 }
 
+.time-node-set-skip-container {
+    width: 90%;
+    margin-top: 7%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-node-set-skip-button {
+    width: 20%;
+    padding: 4px 0px 4px 0px;
+    border-radius: 2px;
+    border: none;
+    outline: transparent;
+    font-size: 0.7rem;
+    background-color: rgb(142, 154, 250);
+}
+
+.time-node-set-skip-button:hover {
+    cursor: pointer;
+}
+
 .timenode-input-container {
     width: 90%;
     height: 17%;
     display: flex;
     align-items: center;
-    margin: 5px auto 0 auto;
+    margin: 15px auto 0 auto;
     box-sizing: border-box;
 }
 
@@ -62,7 +85,7 @@
 }
 
 .timenode-confirm-button {
-    margin: 20px 0 0 5%;
+    margin: 3% 0 0 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,6 +102,8 @@
     background-color: rgb(82, 99, 255);
 }
 
-/* @media (orientation: portrait) { 
-    .time-node
-} */
+@media (orientation: portrait) { 
+    .timenode-container {
+        height: 250px;
+    }   
+}

@@ -8,7 +8,7 @@ const GameGuide = () => {
     const guideTexts: string[] = [
         "You have taken a loan of $100,000 hoping to hit big on the recently created stock exchange. You either pay off your debt, or die.",
         "Rumors swirl of a volatile tech sector — overnight millionaires, and just as many ruined investors.",
-        "You have 12 months before the debt collectors come knocking. Every decision will count.",
+        "You have until day 60 when the debt collectors come knocking. Every decision will count.",
         "The market is unpredictable, but whispers of insider tips and shady dealings might just tip the scales in your favor.",
         "Good luck, trader. Your fate is now in your own hands."
     ];

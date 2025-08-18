@@ -198,3 +198,23 @@
 .market-stock-depth-stat-subtitle {
     font-size: 1rem;
 }
+
+@media (orientation: portrait) { 
+    .marketnode-container {
+        height: 1200px;
+        flex-direction: column-reverse;
+    }
+
+    .marketnode-view-container {
+        height: 50%;
+        width: 100%;
+    }
+
+    .marketnode-stock-search-container {
+        margin-top: 2.5%;
+    }
+
+    .market-stock-list-container {
+        margin-top: 5%;
+    }
+}

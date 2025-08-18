@@ -116,3 +116,9 @@
 .portfolio-stock-state-trend {
     font-size: 1rem;
 }
+
+@media (orientation: portrait) { 
+    .portfolionode-container {
+        height: 600px;
+    }   
+}
