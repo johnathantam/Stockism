@@ -87,7 +87,7 @@ function useShortOrders( marketRef: RefObject<MarketNodeHandles>, portfolioRef: 
 
                             eventChat.current.announceEvent({
                                 eventTitle: "Derivatives Action.",
-                                eventDescription: `A unpaid short debt was automatically billed at your liquid balance for a value of ${formatMoney(order.shortAmount)}`,
+                                eventDescription: `A unpaid short debt was automatically billed at your liquid balance for a value of ${formatMoney(order.shortAmount)} or ${order.shortQuantity} shares at ${formatMoney(marketItem.price)}/share`,
                                 eventTitleColor: "rgba(255, 70, 70, 1)",
                                 eventDescriptionColor: "rgba(255, 70, 70, 1)",
                                 eventBorderColor: "rgba(255, 70, 70, 1)"
